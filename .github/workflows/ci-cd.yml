@@ -1,4 +1,4 @@
-name: CI pipeline
+name: CI CD pipeline
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
     paths-ignore:
       - Readme.md
       - 'kubernetes/**'
-  pull-rewuest:
+  pull_request:
     branches: [ main ]
     paths-ignore:
       - Readme.md
