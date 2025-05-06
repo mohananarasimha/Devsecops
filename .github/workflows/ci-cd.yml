@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup nodejs
-        uses: actions/checkout@v4
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
@@ -86,7 +86,7 @@ jobs:
     env:
       REGISTRY: ghcr.io
       IMAGE_NAME: ${{ github.repository }}
-    output:
+    outputs:
       image: ${{ steps.set_output.outputs.image_tag }}
     steps:
       - name: Checkout code
