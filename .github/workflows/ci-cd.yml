@@ -112,10 +112,10 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY}}/${{ env.IMAGE_NAME }}
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
             type=sha,format=long
-            type=raw,event=branch
+            type=raw,event=branch,value=${{ github.ref_name }}
             latest
 
       - name: Build Docker image
