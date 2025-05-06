@@ -108,6 +108,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.TOKEN }}
 
+      - name: Verify image existence
+        run: |
+          echo "Checking if image exists: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:sha-${{ github.sha }}"
+          docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:sha-${{ github.sha }} || exit 1
+          
       - name: Extract metadata for docker image
         id: meta
         uses: docker/metadata-action@v5
