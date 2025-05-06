@@ -2,14 +2,12 @@ name: CI pipeline
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
     paths-ignore:
       - Readme.md
       - 'kubernetes/**'
   pull-rewuest:
-    branches:
-      - main
+    branches: [ main ]
     paths-ignore:
       - Readme.md
       - 'kubernetes/**'
